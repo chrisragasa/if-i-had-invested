@@ -36,7 +36,7 @@ def stock():
     wealth['curr_price'] = format(curr_price, '.2f')
     wealth['curr_val'] = format(curr_val, '.2f')
         
-    return render_template('stock.html', content=wealth, title=ticker)
+    return render_template('stock.html', content=wealth, title="Calculate")
 
 @app.route('/')
 def index():
