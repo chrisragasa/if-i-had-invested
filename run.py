@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from AlphaVantageAPI import AlphaVantageAPI
 from util import get_prev_price, get_current_price, dollars_to_shares, shares_to_dollars
 
@@ -22,6 +22,8 @@ def stock():
     # get the specific stock prices from json object
     prev_price = float(get_prev_price(prev_data, date_formatted))
     curr_price = float(get_current_price(curr_data))
+    if prev_price == -1 or curr_price == -1:
+        return render_template('stock.html', content=api.get_data(), title="Error", error=True)
 
     # calculate the wealth difference using $10000 initial investment
     dollars_investment = 10000
@@ -34,7 +36,7 @@ def stock():
     wealth['curr_price'] = format(curr_price, '.2f')
     wealth['curr_val'] = format(curr_val, '.2f')
         
-    return render_template('stock.html', content=wealth)
+    return render_template('stock.html', content=wealth, title=ticker)
 
 @app.route('/')
 def index():
