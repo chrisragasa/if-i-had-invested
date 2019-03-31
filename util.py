@@ -1,3 +1,5 @@
+from numbers import Number
+
 def get_prev_price(data, date):
     """Gets the closing stock price for a specified month
     
@@ -40,9 +42,17 @@ def get_current_price(data):
         return current_price["1. open"]
 
 def dollars_to_shares(dollars, shareprice):
+    if not isinstance(dollars, Number) or not isinstance(shareprice, Number):
+        return -1
+    if dollars < 0 or shareprice <= 0:
+        return -1
     return dollars // shareprice
 
 def shares_to_dollars(sharecount, shareprice):
+    if not isinstance(sharecount, Number) or not isinstance(shareprice, Number):
+        return -1
+    if sharecount < 0 or shareprice < 0:
+        return -1 
     return sharecount * shareprice
 
 def _is_valid_data(data):
