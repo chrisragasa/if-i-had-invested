@@ -1,7 +1,7 @@
 # If I Had Invested
 ___
 A Flask application that leverages the Alpha Vantage API to calculate your gains/losses if you had invested in a particular stock at a given time.
-### https://ancient-tundra-23314.herokuapp.com/
+### https://if-i-had-invested.herokuapp.com/
 ___
 
 ### Project Introduction:
