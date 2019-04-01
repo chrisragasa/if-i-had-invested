@@ -15,10 +15,12 @@ I know... I know... it's a silly idea for an application. However, investing is 
 
 ### Built With:
 Backend - Flask/Python
+
 Frontend - HTML, CSS, JavaScript/jQuery
 
 ### Credits:
 https://www.pexels.com
+
 https://www.flaticon.com
 
 ___
