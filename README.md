@@ -31,3 +31,9 @@ In root directory:
 $ pip install -r requirements.txt
 $ python run.py
 ```
+### Docker
+In root directory:
+```bash
+$ docker build -t helloworld .
+$ docker run -p 80:8000 helloworld
+```
